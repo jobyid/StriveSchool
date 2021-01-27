@@ -15,6 +15,13 @@ def preped_iris():
 
 def prepped_zoo():
     df = pd.read_csv('./data/zoo.data')
+    columns = []
+    with open("./data/zoo.names") as f:
+        s = f.read().split("7. Attribute Information: (name of attribute and type of value domain)")
+        s = s[1].split("8. Missing Attribute Values: None")
+        s = s[0].replace('Boolean', '').replace('Numeric (set of values: {0,2,4,5,6,8})', '').replace('Numeric (integer values in range [1,7])','').replace(':      Unique for each instance','').replace('\t','')
+        columns = s.strip().split("\n")
+    df.columns = columns
     y = df.iloc[:,-1]
     X = df.iloc[:,1:-1]
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
