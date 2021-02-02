@@ -1,13 +1,16 @@
-<h1 align="center">Day 2: Data Cleaning (Missings and Outliers)</h1>
+<h1 align="center">Day 2: Data Cleaning (Missing's and Outliers)</h1>
 
 ## Exercises
 
 ### ❓ Missing values
 
 1. What is the missing datatype used in pandas?
-2. How to replace all occurences of the value 9999 to missing in pandas?
-3. How to get the absolute number of missings for each variable in pandas?
-4. How to get the percentage of missings for each variable in pandas?
+	a. np.nan  	
+2. How to replace all occurrences of the value 9999 to missing in pandas?
+	a. df.replace(np.nan, 9999) 
+3. How to get the absolute number of missing for each variable in pandas?
+	a. df.isna().sum()
+4. How to get the percentage of missing for each variable in pandas?
 5. How to drop rows with missing values?
 6. How to drop variables with missing values?
 7. What is the univariate imputation method in sklearn?
